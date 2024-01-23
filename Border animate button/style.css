@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    background-color: #03042C;
+}
+
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03042C;
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.button::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.button span:nth-child(1){
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0c002b, #1779ff);
+    animation: firstAnimate 2s linear infinite;
+}
+@keyframes firstAnimate{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+.button span:nth-child(2){
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, #0c002b, #1779ff);
+    animation: secondAnimate 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes secondAnimate{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+.button span:nth-child(3){
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(to left, #0c002b, #1779ff);
+    animation: thirdAnimate 2s linear infinite;
+}
+@keyframes thirdAnimate{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.button span:nth-child(4){
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #0c002b, #1779ff);
+    animation: forthAnimate 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes forthAnimate{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+.button:hover{
+    background-color: coral;
+    box-shadow: 0 20px 50px coral;
+}
+
+.button:hover span{
+    background: coral;
+}
